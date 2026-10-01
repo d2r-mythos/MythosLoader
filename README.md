@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://discord.com/invite/d2rmythos"><img src="https://img.shields.io/badge/Discord-Join%20D2R%20Mythos-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2R Mythos Discord"></a>
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0C0A09?style=for-the-badge&logo=windows&logoColor=C8A45C&labelColor=1C1715" alt="Windows 10 and 11">
-  <img src="https://img.shields.io/badge/Status-In%20development-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Status: in development">
+  <img src="https://img.shields.io/badge/Release-1.0-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Release 1.0">
   <img src="https://img.shields.io/badge/For-Diablo%20II%3A%20Resurrected-8B1E1E?style=for-the-badge&labelColor=1C1715" alt="For Diablo II: Resurrected">
 </p>
 
@@ -23,9 +23,13 @@
 ---
 
 > [!IMPORTANT]
-> **MythosLoader is in active development and has not been released yet.** Everything on this page
-> describes version 1.0 as it is being built. Join the [D2R Mythos Discord](https://discord.com/invite/d2rmythos)
-> to get the announcement the moment the first build is out.
+> **MythosLoader 1.0 is out.** [Download it from the Releases page](../../releases/latest).
+> 1.0 covers saved logins, adding a loader from a token or a Battle.net login, multi-launch, window
+> titles, per-loader launch options, region switching and intro skip. Sections marked **(planned)**
+> describe features coming in later releases.
+>
+> This is a first release: it is not code-signed yet, and it has had limited testing against live
+> game sessions. If a launch doesn't work for you, tell us on [Discord](https://discord.com/invite/d2rmythos).
 
 **MythosLoader** lets you play several Diablo II: Resurrected accounts on one PC at the same time.
 Add each Battle.net account once, then launch one, a few, or all of them with a single click. Every
@@ -38,7 +42,7 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
 <p align="center">
   <img src="assets/preview.png" alt="MythosLoader main window: accounts list with status, window titles and launch controls" width="92%">
   <br>
-  <sub><i>Concept preview of the main window. The final look may change before release.</i></sub>
+  <sub><i>Concept preview of the main window. Some parts shown here (groups, other clients, Identify) are planned.</i></sub>
 </p>
 
 ## 📜 Contents
@@ -49,13 +53,13 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
   - [Run several clients side by side](#run-several-clients-side-by-side)
   - [Window titles](#window-titles)
   - [Find and Identify](#find-and-identify)
-  - [Focus hotkeys](#focus-hotkeys)
+  - [Focus hotkeys](#focus-hotkeys-planned)
   - [Intro skip](#intro-skip)
-  - [System tray](#system-tray)
+  - [System tray](#system-tray-planned)
   - [Game options](#game-options)
-  - [Groups and launch order](#groups-and-launch-order)
+  - [Groups and launch order](#groups-and-launch-order-planned)
   - [Shortcuts and command line](#shortcuts-and-command-line)
-  - [Window layouts](#window-layouts)
+  - [Window layouts](#window-layouts-planned)
   - [Portable mode](#portable-mode)
 - [Coming from D2RML?](#-coming-from-d2rml)
 - [How it works](#-how-it-works)
@@ -125,16 +129,16 @@ itself on every launch. There's nothing extra to download and no command windows
   **Cancel** and **Cancel all** buttons.
 - Clicking launch on an account that's already running brings it to the front instead of starting a
   second client on the same account.
-- Games started some other way are listed under **Other clients**, and you can tell MythosLoader
-  which account they belong to.
+- *(planned)* Games started some other way are listed under **Other clients**, and you can tell
+  MythosLoader which account they belong to.
 
 ### Window titles
 
 Every game window can be renamed so it's easy to find in the taskbar, in Alt+Tab and on screen.
 
 - One **global template** for all accounts, plus a **per-account override**.
-- **Live rename:** change the template and every running window updates instantly.
-- **Title keeper:** if the game resets its title, MythosLoader puts yours back.
+- *(planned)* **Live rename:** change the template and every running window updates instantly.
+- *(planned)* **Title keeper:** if the game resets its title, MythosLoader puts yours back.
 - **Keep the game's title** per account, for overlays or tools that look for the original title.
 
 | Placeholder | Becomes | Example |
@@ -158,6 +162,8 @@ D2R {index} - {name} ({hotkey})  →  D2R 1 - sorc-main (Ctrl+Alt+1)
 
 ### Find and Identify
 
+**Find** is in 1.0. **Identify** is planned.
+
 <p align="center">
   <img src="assets/identify.png" alt="Identify: each running game window gets a gold border, a slot number and the account name" width="92%">
   <br>
@@ -171,7 +177,7 @@ D2R {index} - {name} ({hotkey})  →  D2R 1 - sorc-main (Ctrl+Alt+1)
   in a small notification instead.
 - The label is drawn *over* the game window by MythosLoader itself; nothing is added to the game.
 
-### Focus hotkeys
+### Focus hotkeys (planned)
 
 Off by default; turn them on in Settings.
 
@@ -193,7 +199,7 @@ Off by default; turn them on in Settings.
   Nothing is sent once the game has logged in.
 - Alternative method: the game's own *skip logo video* option, or both together.
 
-### System tray
+### System tray (planned)
 
 | Setting | Default |
 |---|---|
@@ -219,7 +225,9 @@ Closing MythosLoader never closes your games.
 
 ### Game options
 
-Set launch options for all accounts, then add to them or replace them per account.
+Set launch options for all accounts in Settings, then add to them or replace them per account:
+right-click a loader and choose **Launch options**. The same menu switches a loader's region
+(Americas / Europe / Asia) without re-adding it, and replaces its login with a new token.
 
 | Option | What it does |
 |---|---|
@@ -234,7 +242,7 @@ Set launch options for all accounts, then add to them or replace them per accoun
 A live preview shows exactly what each account will launch with. Options that would put login details
 on the command line are blocked.
 
-### Groups and launch order
+### Groups and launch order (planned)
 
 - Create named groups such as **MF team**, **Rush** or **Mules**; an account can be in several.
 - Drag accounts to set the launch order.
@@ -248,10 +256,10 @@ MythosLoader.exe --group "MF team"             # launch a group
 MythosLoader.exe --minimized                   # start in the tray
 ```
 
-- Works whether MythosLoader is already open or not.
-- **Create desktop shortcut** on any account makes a one-click icon for it.
+- In 1.0, `--launch` and `--minimized` work when MythosLoader is not already running.
+- *(planned)* `--group`, forwarding to an already-open MythosLoader, and **Create desktop shortcut**.
 
-### Window layouts
+### Window layouts (planned)
 
 - Save each client's position and size; it returns to the same spot on the next launch.
 - **Arrange** tiles all running clients on a monitor (2×1, 2×2, 3×2).
@@ -274,16 +282,16 @@ for D2R and stopped working after patch 2.5. Thanks to Sunblood for the original
 | Extra tools | Needs `handle64.exe` | Nothing extra |
 | Administrator rights | Always | Designed to run as a normal user |
 | Saved logins | Plain files next to the program | Encrypted for your Windows user |
-| Window titles | Fixed `D2R:name` | Templates, live rename, title keeper |
-| Find / Identify / hotkeys | ❌ | ✅ |
+| Window titles | Fixed `D2R:name` | Templates, per-loader override |
+| Find / Identify / hotkeys | ❌ | Find in 1.0; Identify and hotkeys planned |
 | Intro skip | Sent to whichever game window it finds first | Sent only to the client that is starting, per account |
-| Tray menu | Empty | Launch, focus, identify, settings |
-| Game options | One global text box | Global + per account, with checkboxes |
-| Groups | ❌ | ✅ |
+| Tray menu | Empty | Planned |
+| Game options | One global text box | Global + per account, with checkboxes and a live preview |
+| Groups | ❌ | Planned |
 | Timeouts and Cancel | ❌ Can wait forever | ✅ Every step has a timeout and a Cancel button |
 
-**Import from D2RML** (Settings → Data) brings over your accounts and settings in one step. Your old
-files are left untouched.
+*(planned)* **Import from D2RML** will bring over your accounts and settings in one step, leaving your
+old files untouched.
 
 ## 🧠 How it works
 
@@ -323,7 +331,6 @@ sequenceDiagram
 |---|---|---|
 | `settings.json` | Your preferences | No secrets in it |
 | `accounts.json` | Account names, labels, groups, per-account options, saved logins | Saved logins: **yes**, with Windows DPAPI |
-| `logs\` | Activity log, last 7 days | Login data is removed automatically |
 
 **What it never does**
 
@@ -333,7 +340,7 @@ sequenceDiagram
 - Never sends one keystroke or click to several clients. Blizzard bans input broadcasting, and
   MythosLoader has no such feature.
 - Never sends your data anywhere. The only network traffic is Battle.net's own login page and a
-  once-a-day check of this repository for new releases (you can turn it off).
+  (planned) once-a-day check of this repository for new releases.
 
 **An honest note on encryption.** Your saved logins are encrypted for your Windows user, which
 protects them from other Windows users on the PC and from anyone who copies the files. Like any
@@ -348,7 +355,7 @@ your PC clean.
 | Game windows | Reads their position, sets their title, brings them to the front, sends a key during the intro when intro skip is on. |
 | Registry | Writes the game's login slot right before a launch. Optional: the *Start with Windows* entry. |
 | Files | Its own data folder, plus your D2R settings file only if you turn on per-account settings profiles. |
-| Network | Battle.net login page; release check against this repository. |
+| Network | Battle.net login page. |
 
 ## 💻 Requirements
 
@@ -360,25 +367,21 @@ your PC clean.
 
 ## 🚀 Getting started
 
-> [!NOTE]
-> These steps apply once the first release is out. Until then, follow the
-> [Discord](https://discord.com/invite/d2rmythos) for news.
-
-1. **Download** `MythosLoader-x.y.z-win-x64.zip` from the [Releases](../../releases) page.
+1. **Download** `MythosLoader-1.0.0-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unzip** it anywhere you like. There's no installer.
-3. **Run** `MythosLoader.exe`. The first-run wizard finds your game folder automatically.
-4. **Add your accounts.** Click **＋ Add account**, pick your region, log in on the Battle.net page.
+3. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
+4. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
 5. **Launch.** Tick your accounts and press **Launch selected**, or just **Launch all**.
 
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-x.y.z-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.0.0-win-x64.zip -Algorithm SHA256
 ```
 
-**"Windows protected your PC"?** New releases of any program can trigger SmartScreen until enough
-people have downloaded them. Releases are code-signed; click **More info** to see the publisher, then
-**Run anyway**.
+**"Windows protected your PC"?** MythosLoader 1.0 is not code-signed yet, so SmartScreen shows this
+warning. Click **More info**, then **Run anyway**. Check your download against `SHA256SUMS.txt` first.
+A signed build is planned.
 
 ## 🛠 Settings reference
 
@@ -467,8 +470,7 @@ documentation and issue tracker.
 <summary><b>My antivirus complains.</b></summary>
 
 Multi-launchers have to close the game's "already running" check inside the game process, which some
-antivirus products find suspicious. Releases are code-signed and checksummed; you can confirm the
-publisher in the file's properties. If your antivirus flags a release, tell us on Discord so we can
+antivirus products find suspicious. Releases come with SHA-256 checksums (code signing is planned). If your antivirus flags a release, tell us on Discord so we can
 report the false positive.
 </details>
 
@@ -480,20 +482,19 @@ report the false positive.
 | Login timed out | The saved login was used up: **Log in again** on that account |
 | The game closed before logging in | Launch again; if it repeats, check the game runs normally through Battle.net |
 | Second client won't start | Make sure every running client was started normally; restart MythosLoader and try again |
-| Window title not applied | Some tools change titles too; check *Title keeper*, or use *Keep the game's title* for that account |
-| Hotkey marked "taken" | Another program owns it: pick a different modifier in Settings |
+| Window title not applied | Check *Rename game windows* in Settings and the loader's Launch options |
 | Built-in login page is blank | Install Microsoft Edge WebView2, or use *paste from browser* |
 
-Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include the output of
-**Copy details** from the app. It removes login data automatically.
+Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include the lines from the
+**Activity** panel. Login data is removed from them automatically.
 
 ## 🗺 Roadmap
 
 - [x] Design and planning
-- [ ] Core launcher: saved logins, multi-launch, encrypted storage
-- [ ] Quality of life: window titles, Find and Identify, hotkeys, intro skip, tray, game options, groups
-- [ ] **1.0 release**: signed build, first-run wizard, D2RML import
-- [ ] After 1.0: per-account game settings profiles, one-click updates, light theme, more languages
+- [x] **1.0**: saved logins, add from token or Battle.net login, multi-launch, window titles, per-loader launch options, region switch, intro skip
+- [ ] Next: system tray, Identify overlay, focus hotkeys, groups, title keeper, D2RML import
+- [ ] Code-signed builds, update check, first-run wizard
+- [ ] Later: per-account game settings profiles, window layouts, light theme, more languages
 
 Want something on this list? Suggest it on [Discord](https://discord.com/invite/d2rmythos).
 
@@ -504,7 +505,7 @@ Want something on this list? Suggest it on [Discord](https://discord.com/invite/
 </p>
 
 - **Help, questions and ideas:** the [D2R Mythos Discord](https://discord.com/invite/d2rmythos) is the fastest way.
-- **Bugs:** open an issue with the bug-report form (after the first release).
+- **Bugs:** open an issue with the bug-report form.
 - **Security problems:** please report privately, see [SECURITY.md](SECURITY.md).
 - **Release notes:** [CHANGELOG.md](CHANGELOG.md) and the [Releases](../../releases) page.
 
