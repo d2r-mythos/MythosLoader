@@ -1,5 +1,11 @@
 # MythosLoader release notes
 
+## 1.2.3
+
+- **Fixed: "Data version mismatch detected" on start-up** with intro skip on (1.2.2). The intro-skip mod now
+  carries the game's build number, which the game checks for every mod. It is updated by itself after a game
+  patch.
+
 ## 1.2.2
 
 - **Intro skip fixed.** The old method pressed Space for 15 seconds after the game window appeared. Those
