@@ -41,7 +41,7 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
 "Diablo II: Resurrected". No command windows flashing, no extra tools to download.
 
 <p align="center">
-  <img src="assets/preview.png" alt="MythosLoader main window: accounts list with status, window titles and launch controls" width="92%">
+  <img src="assets/preview.png" alt="MythosLoader: the Loaders tab with three loaders running, each with its region, a confirmed login, a slot number and its window title" width="92%">
   <br>
   <sub><i>Concept preview of the main window. Some parts shown here (groups, other clients, Identify) are planned.</i></sub>
 </p>
@@ -173,7 +173,7 @@ D2R {index} - {name} ({hotkey})  →  D2R 1 - sorc-main (Ctrl+Alt+1)
 ### Find and Identify
 
 <p align="center">
-  <img src="assets/identify.png" alt="Identify: each running game window gets a gold border, a slot number and the account name" width="92%">
+  <img src="assets/identify.png" alt="Identify: three game windows, each with a gold border, its slot number, loader name, region and hotkey" width="100%">
   <br>
   <sub><i>Concept of Identify all: every client is labelled for a few seconds.</i></sub>
 </p>
@@ -225,6 +225,10 @@ Event and Reign of the Warlock.
   item always gets, its item level rule, and notes such as **Ladder only** or **Nightmare and Hell only**.
 - The recipes are read from the game's own cube table and built into MythosLoader, so the tab works
   offline.
+
+<p align="center">
+  <img src="assets/recipes.png" alt="The Recipes tab: a search for hit power shows the crafted helm and boots recipes, their ingredients with rune and gem pictures, the mods they always add and the item level rule" width="92%">
+</p>
 
 ### System tray
 
@@ -451,6 +455,10 @@ Get-FileHash .\MythosLoader-1.2.4-win-x64.zip -Algorithm SHA256
 - **Antivirus removed the file:** check the checksum, then restore it and report the false positive.
 
 ## 🛠 Settings reference
+
+<p align="center">
+  <img src="assets/settings.png" alt="The Settings tab: game location and options, window titles, intro skip, launching, tray and startup, hotkeys and D2RML import on one page" width="92%">
+</p>
 
 | Section | Setting | Default |
 |---|---|---|
