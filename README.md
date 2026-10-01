@@ -116,11 +116,11 @@ barbarian, a mule, a friend's rush) that gets old fast:
   Authenticator and e-mail codes work exactly like they do in your browser.
 - Prefer your own browser? Log in there and paste the address from the address bar instead.
 - MythosLoader keeps the login, **not your password**, and encrypts it for your Windows user.
-- **Logins stay fresh by themselves.** Each time the game connects, it hands back a new login.
-  MythosLoader saves that new one automatically, so the next launch just works.
-- Every account shows its **region**, **how old its saved login is**, and the result of its last launch.
-- If a login stops working (for example because you logged into that account through Battle.net
-  in the meantime), the row says **Log in again** and one click fixes it.
+- **Log in once.** The login is saved the moment you add it and is used for every launch. If the
+  game ever hands back a newer one, MythosLoader saves that automatically.
+- Every account shows its **region**, its **login** (*Saved* until a launch has logged in with it,
+  then *Confirmed*, and it stays confirmed) and its **status** (Running, Closed, …).
+- If a login stops working, right-click the loader and choose **Log in again**.
 
 ### Run several clients side by side
 
@@ -340,8 +340,8 @@ sequenceDiagram
     ML->>ML: Encrypt and save it for your Windows user
     You->>ML: Launch
     ML->>D2R: Start the game with the saved login
-    D2R-->>ML: Fresh login after connecting
-    ML->>ML: Save the fresh login for next time
+    D2R-->>ML: Logged in
+    ML->>ML: Mark the login Confirmed
 ```
 
 1. **Log in once.** You log in on Battle.net's own page. MythosLoader only receives the result of
@@ -349,12 +349,12 @@ sequenceDiagram
 2. **Saved, encrypted.** The login is stored encrypted for your Windows user account.
 3. **Launch.** MythosLoader hands the saved login to the game, lets it open alongside your other
    clients, names its window and skips the intro.
-4. **Stay fresh.** When the game connects, it gives back a new login. MythosLoader saves that one, so
-   you never have to log in again as long as you launch through MythosLoader.
+4. **Confirmed.** Once a launch has logged in, the loader's login shows **Confirmed** and is used
+   again on every launch. If the game hands back a newer login, MythosLoader saves it for you.
 
 > [!TIP]
-> Logging into an account through the normal Battle.net app uses up the login MythosLoader saved for
-> it. That's fine: the account will show **Log in again**, and one click puts it right.
+> If a loader stops connecting (for example after that account was used somewhere else), right-click
+> it and choose **Log in again**.
 
 ## 🔒 Security and privacy
 
@@ -401,7 +401,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.1.2-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.1.3-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unzip** it anywhere you like. There's no installer.
 3. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
 4. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
@@ -410,7 +410,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.1.2-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.1.3-win-x64.zip -Algorithm SHA256
 ```
 
 **"Windows protected your PC"?** MythosLoader is not code-signed yet, so SmartScreen shows this

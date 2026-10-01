@@ -1,5 +1,16 @@
 # MythosLoader release notes
 
+## 1.1.3
+
+- **LOGIN column now says what is true.** A login shows **Saved** from the moment you add it and
+  **Confirmed** once a launch has logged in with it. A confirmed login stays confirmed: closing the game
+  early no longer puts it back to "Unconfirmed".
+- **STATUS column in plain words:** Running, Logged in, Closed, Closed before logging in, Could not log in.
+  The "new login not saved yet" and "Closed before a new login was saved" messages are gone — your login
+  is saved when you add it, and it is the one used on every launch.
+- "Could not log in" replaces "No login before the time ran out". A login that has worked before is not
+  marked "Log in again" because of one failed launch.
+
 ## 1.1.2
 
 - **Fixed a false "Log in again" message.** If the game closed before it saved a new login, the loader
