@@ -1,5 +1,12 @@
 # MythosLoader release notes
 
+## 1.1.2
+
+- **Fixed a false "Log in again" message.** If the game closed before it saved a new login, the loader
+  was marked as needing a new login even though its saved login still worked. It now shows a neutral
+  "Closed before a new login was saved", keeps the login, and tries it again on the next launch.
+- The LOGIN column shows "Unconfirmed" for a login that has not been confirmed by a completed launch yet.
+
 ## 1.1.1
 
 - **Fixed: the second login failing.** A loader could log in the first time and then fail to connect to
