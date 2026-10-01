@@ -1,0 +1,48 @@
+name: Bug report
+description: Something in MythosLoader does not work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste a Battle.net login link, a token, a password, or files from MythosLoader's data folder.**
+        For questions and help, the [D2R Mythos Discord](https://discord.com/invite/d2rmythos) is faster.
+  - type: input
+    id: version
+    attributes:
+      label: MythosLoader version
+      description: Shown on the About page.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 24H2"
+    validations:
+      required: true
+  - type: input
+    id: clients
+    attributes:
+      label: How many game clients were running?
+      placeholder: "3"
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Steps to reproduce, if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details from the app
+      description: Use "Copy details" in MythosLoader and paste here. It removes login data automatically.
+      render: text
