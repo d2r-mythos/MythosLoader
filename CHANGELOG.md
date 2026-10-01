@@ -1,5 +1,11 @@
 # MythosLoader release notes
 
+## 1.2.1
+
+- **Settings is now a tab** in the main window, next to Loaders, instead of a pop-up. Everything fits on
+  one page without scrolling. The gear button and the tray menu open it.
+- **Discord button** now shows the real Discord logo.
+
 ## 1.2.0
 
 - **System tray.** A tray icon with a menu to launch loaders and groups, bring a running game to the
