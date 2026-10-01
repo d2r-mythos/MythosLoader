@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://discord.com/invite/d2rmythos"><img src="https://img.shields.io/badge/Discord-Join%20D2R%20Mythos-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2R Mythos Discord"></a>
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0C0A09?style=for-the-badge&logo=windows&logoColor=C8A45C&labelColor=1C1715" alt="Windows 10 and 11">
-  <img src="https://img.shields.io/badge/Release-1.0-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Release 1.0">
+  <img src="https://img.shields.io/badge/Release-1.1-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Release 1.1">
   <img src="https://img.shields.io/badge/For-Diablo%20II%3A%20Resurrected-8B1E1E?style=for-the-badge&labelColor=1C1715" alt="For Diablo II: Resurrected">
 </p>
 
@@ -23,13 +23,14 @@
 ---
 
 > [!IMPORTANT]
-> **MythosLoader 1.0 is out.** [Download it from the Releases page](../../releases/latest).
-> 1.0 covers saved logins, adding a loader from a token or a Battle.net login, multi-launch, window
-> titles, per-loader launch options, region switching and intro skip. Sections marked **(planned)**
-> describe features coming in later releases.
+> **MythosLoader 1.1 is out.** [Download it from the Releases page](../../releases/latest).
+> New in 1.1: a built-in **Update** button, and a per-loader **performance mod** (lowHD) so some
+> windows can run light while others stay at full quality. From 1.1 on, MythosLoader updates itself;
+> if you have 1.0, download 1.1 by hand this one last time.
 >
-> This is a first release: it is not code-signed yet, and it has had limited testing against live
-> game sessions. If a launch doesn't work for you, tell us on [Discord](https://discord.com/invite/d2rmythos).
+> Sections marked **(planned)** describe features coming in later releases. MythosLoader is not
+> code-signed yet and has had limited testing against live game sessions. If something doesn't work
+> for you, tell us on [Discord](https://discord.com/invite/d2rmythos).
 
 **MythosLoader** lets you play several Diablo II: Resurrected accounts on one PC at the same time.
 Add each Battle.net account once, then launch one, a few, or all of them with a single click. Every
@@ -57,6 +58,8 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
   - [Intro skip](#intro-skip)
   - [System tray](#system-tray-planned)
   - [Game options](#game-options)
+  - [Performance mod (lowHD)](#performance-mod-lowhd)
+  - [Updates](#updates)
   - [Groups and launch order](#groups-and-launch-order-planned)
   - [Shortcuts and command line](#shortcuts-and-command-line)
   - [Window layouts](#window-layouts-planned)
@@ -101,6 +104,8 @@ barbarian, a mule, a friend's rush) that gets old fast:
 | ⏩ **Intro skip** | No more logo videos, globally or per account. |
 | 🧭 **System tray** | Launch, focus and identify clients from the tray menu. |
 | ⚙ **Game options** | Windowed, no sound, mods and more, for all accounts or per account. |
+| 🪶 **Performance mod** | Run chosen loaders with lowHD to cut memory use and load times. One-click download. |
+| ⬆ **Built-in updates** | A new version is one click away; no trip to GitHub. |
 | 🗂 **Groups** | "MF team", "Rush", "Mules": launch a whole group in one go. |
 | 🔗 **Shortcuts** | Desktop shortcuts and command-line launching for any account or group. |
 | 🔒 **Encrypted storage** | Saved logins are encrypted for your Windows user account. |
@@ -242,6 +247,34 @@ right-click a loader and choose **Launch options**. The same menu switches a loa
 A live preview shows exactly what each account will launch with. Options that would put login details
 on the command line are blocked.
 
+### Performance mod (lowHD)
+
+Running several clients is heavy. A loader can run with **lowHD**, a mod by **celloboy126** that blocks
+most game content to greatly reduce memory use and load times, while your other loaders stay at full
+quality.
+
+- In a loader's **Launch options**, press **Download lowHD (once)**. MythosLoader downloads the mod
+  (about 14 MB), checks it, and installs it into your game's `mods` folder. You only do this once.
+- After that, switch it per loader: right-click a loader → **Performance mod** → `lowHDfiller`,
+  **Off (full quality)**, or **Use global setting**.
+- A loader with its own choice shows a small `mod: lowHDfiller` or `full quality` tag in the list.
+- The mod's recommended low-graphics settings are added for the mod only, so loaders without the mod
+  keep your normal graphics settings. Existing settings are never overwritten.
+- Other mods work too: **Install mod from zip…** installs any mod you downloaded yourself.
+
+lowHD is not made by us. All credit goes to its author; the original page is on
+[Nexus Mods](https://www.nexusmods.com/diablo2resurrected/mods/1054). If your game is installed under
+`Program Files`, Windows may ask you to run MythosLoader as administrator once for the install.
+
+### Updates
+
+- MythosLoader checks for a new release when it starts. When there is one, an **⬇ Update** button
+  appears in the title bar.
+- One click downloads the new version, verifies it against the release's checksum, replaces the
+  program and restarts it. Your running games are not closed.
+- The **Check for updates** button next to Settings checks on demand. The automatic check can be
+  turned off in Settings.
+
 ### Groups and launch order (planned)
 
 - Create named groups such as **MF team**, **Rush** or **Mules**; an account can be in several.
@@ -340,7 +373,8 @@ sequenceDiagram
 - Never sends one keystroke or click to several clients. Blizzard bans input broadcasting, and
   MythosLoader has no such feature.
 - Never sends your data anywhere. The only network traffic is Battle.net's own login page and a
-  (planned) once-a-day check of this repository for new releases.
+  a check of this repository for new releases when MythosLoader starts (you can turn it off), and the
+  lowHD download if you ask for it.
 
 **An honest note on encryption.** Your saved logins are encrypted for your Windows user, which
 protects them from other Windows users on the PC and from anyone who copies the files. Like any
@@ -354,8 +388,8 @@ your PC clean.
 | Game process | Closes the game's "already running" check so another copy can start. Asks Windows only for the rights needed for that. |
 | Game windows | Reads their position, sets their title, brings them to the front, sends a key during the intro when intro skip is on. |
 | Registry | Writes the game's login slot right before a launch. Optional: the *Start with Windows* entry. |
-| Files | Its own data folder, plus your D2R settings file only if you turn on per-account settings profiles. |
-| Network | Battle.net login page. |
+| Files | Its own data folder. If you install a mod: the game's `mods` folder, and that mod's own settings folder under Saved Games. |
+| Network | Battle.net login page; update check and downloads from this project's GitHub releases. |
 
 ## 💻 Requirements
 
@@ -367,7 +401,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.0.0-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.1.0-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unzip** it anywhere you like. There's no installer.
 3. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
 4. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
@@ -376,10 +410,10 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.0.0-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.1.0-win-x64.zip -Algorithm SHA256
 ```
 
-**"Windows protected your PC"?** MythosLoader 1.0 is not code-signed yet, so SmartScreen shows this
+**"Windows protected your PC"?** MythosLoader is not code-signed yet, so SmartScreen shows this
 warning. Click **More info**, then **Run anyway**. Check your download against `SHA256SUMS.txt` first.
 A signed build is planned.
 
@@ -492,8 +526,9 @@ Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include 
 
 - [x] Design and planning
 - [x] **1.0**: saved logins, add from token or Battle.net login, multi-launch, window titles, per-loader launch options, region switch, intro skip
+- [x] **1.1**: built-in updates, per-loader performance mod (lowHD) with one-click download
 - [ ] Next: system tray, Identify overlay, focus hotkeys, groups, title keeper, D2RML import
-- [ ] Code-signed builds, update check, first-run wizard
+- [ ] Code-signed builds, first-run wizard
 - [ ] Later: per-account game settings profiles, window layouts, light theme, more languages
 
 Want something on this list? Suggest it on [Discord](https://discord.com/invite/d2rmythos).
