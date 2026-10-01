@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#2a201a"/>
+      <stop offset="0.55" stop-color="#16110f"/>
+      <stop offset="1" stop-color="#0c0a09"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e3a6"/>
+      <stop offset="0.35" stop-color="#ecd189"/>
+      <stop offset="0.7" stop-color="#c8a45c"/>
+      <stop offset="1" stop-color="#8a744a"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecd189"/>
+      <stop offset="0.5" stop-color="#8a744a"/>
+      <stop offset="1" stop-color="#c8a45c"/>
+    </linearGradient>
+    <radialGradient id="ember" cx="50%" cy="58%" r="45%">
+      <stop offset="0" stop-color="#c23b3b" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#c23b3b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="0 0 0 0 0.78  0 0 0 0 0.64  0 0 0 0 0.36  0 0 0 0.55 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- tile -->
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#bg)"/>
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#ember)"/>
+  <rect x="26" y="26" width="460" height="460" rx="96" fill="none" stroke="url(#rim)" stroke-width="5" opacity="0.9"/>
+  <rect x="40" y="40" width="432" height="432" rx="84" fill="none" stroke="#8a744a" stroke-width="1.5" opacity="0.45"/>
+
+  <!-- three stacked panes: several clients -->
+  <g fill="none" stroke="#8a744a" stroke-width="3" opacity="0.5">
+    <rect x="150" y="402" width="212" height="22" rx="5"/>
+    <rect x="170" y="430" width="172" height="14" rx="4" opacity="0.7"/>
+  </g>
+
+  <!-- the sigil -->
+  <g filter="url(#glow)">
+    <path fill="url(#gold)" stroke="#4a3b22" stroke-width="3" stroke-linejoin="miter"
+      d="M118 372 L118 152 L147 112 L176 152 L256 266 L336 152 L365 112 L394 152 L394 372
+         L410 372 L402 392 L330 392 L322 372 L346 372 L346 232 L268 338 L244 338 L166 232
+         L166 372 L190 372 L182 392 L110 392 L102 372 Z"/>
+    <path fill="url(#gold)" stroke="#4a3b22" stroke-width="3"
+      d="M256 108 L282 150 L256 192 L230 150 Z"/>
+    <path fill="#fff6d8" opacity="0.55" d="M256 122 L270 150 L256 150 L244 150 Z"/>
+  </g>
+</svg>
