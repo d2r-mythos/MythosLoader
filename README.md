@@ -200,9 +200,12 @@ Off by default; turn them on in Settings.
 ### Intro skip
 
 - On by default, with a per-account override (Inherit / On / Off).
-- Skips the logo videos of **the client that is starting**, and only during its first seconds.
-  Nothing is sent once the game has logged in.
-- Alternative method: the game's own *skip logo video* option, or both together.
+- No key presses: MythosLoader adds a tiny mod, `MythosIntroSkip`, to the game's `mods` folder. It only
+  replaces the two start-up videos with empty files, so the game goes straight to the title screen. Your
+  saves, settings and key bindings stay where they are.
+- A loader that already uses lowHD needs nothing extra (lowHD skips the videos the same way).
+- A loader that uses another mod (the game takes only one) gets the fallback: Space is pressed only while a
+  start-up video is playing on that client, and never again once the title screen or the menu is up.
 
 ### System tray
 
@@ -239,7 +242,7 @@ right-click a loader and choose **Launch options**. The same menu switches a loa
 |---|---|
 | Windowed | Starts the game in a window |
 | No sound | Mutes the client (great for second accounts) |
-| Skip logo video | The game's own intro skip |
+| Skip logo video | Passes the game's `-skiplogovideo` switch (no effect on current game builds; use Intro skip) |
 | Mod `<name>` | Loads a mod, with an optional *use txt files* switch |
 | Direct | For extracted game data |
 | Reset offline maps | Fresh offline maps on every game |
@@ -320,7 +323,7 @@ for D2R and stopped working after patch 2.5. Thanks to Sunblood for the original
 | Saved logins | Plain files next to the program | Encrypted for your Windows user |
 | Window titles | Fixed `D2R:name` | Templates, per-loader override, live rename, title keeper |
 | Find / Identify / hotkeys | ❌ | ✅ |
-| Intro skip | Sent to whichever game window it finds first | Sent only to the client that is starting, per account |
+| Intro skip | Space pressed for 15 s into whichever game window it finds first | Empty-video mod, no key presses; per account |
 | Tray menu | Empty | Launch, launch group, focus, identify, settings |
 | Game options | One global text box | Global + per account, with checkboxes and a live preview |
 | Groups | ❌ | ✅ |
@@ -390,9 +393,9 @@ your PC clean.
 | Area | What and why |
 |---|---|
 | Game process | Closes the game's "already running" check so another copy can start. Asks Windows only for the rights needed for that. |
-| Game windows | Reads their position, sets their title, brings them to the front, sends a key during the intro when intro skip is on. |
+| Game windows | Reads their position, sets their title, brings them to the front. Only with another mod active: presses Space while the start-up videos play. |
 | Registry | Writes the game's login slot right before a launch. Optional: the *Start with Windows* entry. |
-| Files | Its own data folder. If you install a mod: the game's `mods` folder, and that mod's own settings folder under Saved Games. |
+| Files | Its own data folder. With intro skip on: a small `MythosIntroSkip` folder in the game's `mods` folder. If you install a mod: the game's `mods` folder, and that mod's own settings folder under Saved Games. |
 | Network | Battle.net login page; update check and downloads from this project's GitHub releases. |
 
 ## 💻 Requirements
@@ -405,7 +408,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.2.1-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.2.2-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unzip** it anywhere you like. There's no installer.
 3. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
 4. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
@@ -414,7 +417,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.2.1-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.2.2-win-x64.zip -Algorithm SHA256
 ```
 
 **"Windows protected your PC"?** MythosLoader is not code-signed yet, so SmartScreen shows this
@@ -432,7 +435,7 @@ A signed build is planned.
 | Windows | Title keeper | On |
 | Windows | Focus hotkeys | Off (`Ctrl+Alt`) |
 | Intro skip | Skip intro videos | On |
-| Intro skip | Method | Keypress (or game option, or both) |
+| Intro skip | Method | Empty-video mod (key presses only alongside another mod) |
 | Launching | Gap between launches | 3 seconds |
 | Launching | Give up waiting for login after | 90 seconds |
 | Launching | Restore the game's login slot afterwards | On |

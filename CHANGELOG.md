@@ -1,5 +1,13 @@
 # MythosLoader release notes
 
+## 1.2.2
+
+- **Intro skip fixed.** The old method pressed Space for 15 seconds after the game window appeared. Those
+  presses could pile up while the game was loading and land later, on the character screen or in game. Intro
+  skip now uses a tiny mod with empty start-up videos (the way lowHD does it): no key presses at all, and the
+  title screen shows in a few seconds. Loaders using lowHD need nothing extra. Loaders using another mod get a
+  careful fallback that presses Space only while a start-up video is playing.
+
 ## 1.2.1
 
 - **Settings is now a tab** in the main window, next to Loaders, instead of a pop-up. Everything fits on
