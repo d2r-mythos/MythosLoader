@@ -1,5 +1,16 @@
 # MythosLoader release notes
 
+## 1.2.4
+
+- **Much faster multi-launch.** All your games now load at the same time and sign in one by one, each as
+  soon as the one before it has picked up its login. Two accounts are usually in the game in around ten
+  seconds; each extra account adds a second or two. Every game still signs in with its own account.
+- **No more "Press any key to begin".** MythosLoader presses it for you, on each game's turn only, and never
+  once a game has signed in.
+- **New Recipes tab** with the game's Horadric Cube icon: every cube recipe in the game, searchable by rune,
+  gem, item or mod, with pictures, crafted mods, item level rules and Ladder / difficulty notes.
+- Settings: "Gap between launches" is now **Pause between sign-ins** (default 0).
+
 ## 1.2.3
 
 - **Fixed: "Data version mismatch detected" on start-up** with intro skip on (1.2.2). The intro-skip mod now

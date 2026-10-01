@@ -56,6 +56,7 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
   - [Find and Identify](#find-and-identify)
   - [Focus hotkeys](#focus-hotkeys)
   - [Intro skip](#intro-skip)
+  - [Cube recipes](#cube-recipes)
   - [System tray](#system-tray)
   - [Game options](#game-options)
   - [Performance mod (lowHD)](#performance-mod-lowhd)
@@ -96,12 +97,13 @@ barbarian, a mule, a friend's rush) that gets old fast:
 | | |
 |---|---|
 | 🔑 **Saved logins** | Log in on Battle.net's own page once. MythosLoader never sees your password. |
-| 🪟 **Multi-launch** | One account, a group, or everything, launched in order with live progress. |
+| 🪟 **Multi-launch** | One account, a group, or everything: all games load at once, then sign in a second or two apart. |
 | 🏷 **Window titles** | Name every game window with a template like `D2R: {name}` or `[{index}] {label}`. |
 | 🎯 **Find** | Bring any client to the front, even when it's minimised or on another monitor. |
 | 🔦 **Identify** | Flash a big gold label over every running client so you can see which is which. |
 | ⌨ **Focus hotkeys** | `Ctrl+Alt+1` to `9` jump straight to a client. |
-| ⏩ **Intro skip** | No more logo videos, globally or per account. |
+| ⏩ **Intro skip** | No more logo videos and no "Press any key": straight to signing in. |
+| 🧊 **Cube recipes** | Every Horadric Cube recipe in the game, searchable, with rune and gem pictures. |
 | 🧭 **System tray** | Launch, focus and identify clients from the tray menu. |
 | ⚙ **Game options** | Windowed, no sound, mods and more, for all accounts or per account. |
 | 🪶 **Performance mod** | Run chosen loaders with lowHD to cut memory use and load times. One-click download. |
@@ -128,8 +130,11 @@ Diablo II: Resurrected normally refuses to start a second copy. MythosLoader tak
 itself on every launch. There's nothing extra to download and no command windows popping up.
 
 - Launch **one account**, **the ones you ticked**, **a group**, or **all of them**.
-- Accounts launch **one after another**, each waiting until the previous one has logged in, with a
-  short adjustable gap between them.
+- **All games load at the same time.** Then they sign in one by one, in whatever order they reach the
+  title screen, each as soon as the one before it has picked up its login (about a second each). Two
+  accounts are usually in the game in around ten seconds.
+- Each game only ever signs in with its own account: the next account's login is handed over only after
+  the previous game has taken its own.
 - A progress strip shows what's happening (`Launching barb-alt (2 of 3) · waiting for login`) with
   **Cancel** and **Cancel all** buttons.
 - Clicking launch on an account that's already running brings it to the front instead of starting a
@@ -200,12 +205,26 @@ Off by default; turn them on in Settings.
 ### Intro skip
 
 - On by default, with a per-account override (Inherit / On / Off).
-- No key presses: MythosLoader adds a tiny mod, `MythosIntroSkip`, to the game's `mods` folder. It only
-  replaces the two start-up videos with empty files, so the game goes straight to the title screen. Your
-  saves, settings and key bindings stay where they are.
-- A loader that already uses lowHD needs nothing extra (lowHD skips the videos the same way).
-- A loader that uses another mod (the game takes only one) gets the fallback: Space is pressed only while a
-  start-up video is playing on that client, and never again once the title screen or the menu is up.
+- MythosLoader adds a tiny mod, `MythosIntroSkip`, to the game's `mods` folder. It only replaces the two
+  start-up videos with empty files, so the game goes straight to the title screen. Your saves, settings
+  and key bindings stay where they are.
+- "Press any key to begin" is pressed for you, on that client only and only on its turn to sign in. No key
+  reaches a game after it has signed in, so nothing can land on the character screen.
+- A loader that already uses lowHD needs nothing extra (lowHD skips the videos the same way). With another
+  mod (the game takes only one) the videos play, and the title key still comes on its turn.
+
+### Cube recipes
+
+The **Recipes** tab lists every Horadric Cube recipe in the game: rune and gem upgrades, sockets, item
+upgrades, crafting with its fixed mods, rerolls, rings and amulets, repairs, quest items, the Pandemonium
+Event and Reign of the Warlock.
+
+- Search by anything: a rune (`ber`), a gem, an item, a mod (`frost nova`), or a recipe name (`hit power`).
+- Pick a category to narrow the list; the counts show how many recipes each has.
+- Every card shows what goes in the cube (with pictures and counts), what comes out, the mods a crafted
+  item always gets, its item level rule, and notes such as **Ladder only** or **Nightmare and Hell only**.
+- The recipes are read from the game's own cube table and built into MythosLoader, so the tab works
+  offline.
 
 ### System tray
 
@@ -323,7 +342,7 @@ for D2R and stopped working after patch 2.5. Thanks to Sunblood for the original
 | Saved logins | Plain files next to the program | Encrypted for your Windows user |
 | Window titles | Fixed `D2R:name` | Templates, per-loader override, live rename, title keeper |
 | Find / Identify / hotkeys | ❌ | ✅ |
-| Intro skip | Space pressed for 15 s into whichever game window it finds first | Empty-video mod, no key presses; per account |
+| Intro skip | Space pressed for 15 s into whichever game window it finds first | Empty-video mod, and the title key on that client's turn only; per account |
 | Tray menu | Empty | Launch, launch group, focus, identify, settings |
 | Game options | One global text box | Global + per account, with checkboxes and a live preview |
 | Groups | ❌ | ✅ |
@@ -354,8 +373,8 @@ sequenceDiagram
 1. **Log in once.** You log in on Battle.net's own page. MythosLoader only receives the result of
    that login, never your password.
 2. **Saved, encrypted.** The login is stored encrypted for your Windows user account.
-3. **Launch.** MythosLoader hands the saved login to the game, lets it open alongside your other
-   clients, names its window and skips the intro.
+3. **Launch.** MythosLoader starts all your games at once, skips the intro, and signs them in one by
+   one, handing each game its own saved login. It names every window as it opens.
 4. **Confirmed.** Once a launch has logged in, the loader's login shows **Confirmed** and is used
    again on every launch. If the game hands back a newer login, MythosLoader saves it for you.
 
@@ -393,7 +412,7 @@ your PC clean.
 | Area | What and why |
 |---|---|
 | Game process | Closes the game's "already running" check so another copy can start. Asks Windows only for the rights needed for that. |
-| Game windows | Reads their position, sets their title, brings them to the front. Only with another mod active: presses Space while the start-up videos play. |
+| Game windows | Reads their position, sets their title, brings them to the front. Presses Space on a game's title screen during its turn to sign in, never after. |
 | Registry | Writes the game's login slot right before a launch. Optional: the *Start with Windows* entry. |
 | Files | Its own data folder. With intro skip on: a small `MythosIntroSkip` folder in the game's `mods` folder. If you install a mod: the game's `mods` folder, and that mod's own settings folder under Saved Games. |
 | Network | Battle.net login page; update check and downloads from this project's GitHub releases. |
@@ -408,7 +427,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.2.3-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.2.4-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unblock** it: right-click the zip → **Properties** → tick **Unblock** → **OK**. This stops the
    "Windows protected your PC" warning ([why, and every other warning](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)).
 3. **Unzip** it anywhere you like. There's no installer.
@@ -419,7 +438,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.2.3-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.2.4-win-x64.zip -Algorithm SHA256
 ```
 
 **Windows warnings.** MythosLoader is not code-signed yet, so Windows may warn about it:
@@ -443,8 +462,8 @@ Full step-by-step guide: **[Getting past Windows warnings](https://github.com/d2
 | Windows | Title keeper | On |
 | Windows | Focus hotkeys | Off (`Ctrl+Alt`) |
 | Intro skip | Skip intro videos | On |
-| Intro skip | Method | Empty-video mod (key presses only alongside another mod) |
-| Launching | Gap between launches | 3 seconds |
+| Intro skip | Method | Empty-video mod |
+| Launching | Pause between sign-ins | 0 seconds |
 | Launching | Give up waiting for login after | 90 seconds |
 | Launching | Restore the game's login slot afterwards | On |
 | Tray & startup | Minimise / close to tray, start minimised, start with Windows | On / Off / Off / Off |
