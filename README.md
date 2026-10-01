@@ -429,7 +429,7 @@ your PC clean.
 
 1. **Download** `MythosLoader-1.2.4-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unblock** it: right-click the zip → **Properties** → tick **Unblock** → **OK**. This stops the
-   "Windows protected your PC" warning ([why, and every other warning](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)).
+   "Windows protected your PC" warning.
 3. **Unzip** it anywhere you like. There's no installer.
 4. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
 5. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
@@ -445,11 +445,10 @@ Get-FileHash .\MythosLoader-1.2.4-win-x64.zip -Algorithm SHA256
 
 - **Your browser holds back the download:** Edge: **…** → **Keep** → **Keep anyway**. Chrome: **Ctrl+J** → **Keep**.
 - **"Windows protected your PC":** click **More info** → **Run anyway** (or unblock the zip first, step 2).
-- **"Smart App Control blocked an app":** there is no "Run anyway" for this one. Read the guide before you
-  change anything.
+- **"Smart App Control blocked an app":** there is no "Run anyway" for this one. The only way past it is turning
+  Smart App Control off (Windows Security → App & browser control); Windows usually does not let you turn it back
+  on without resetting the PC, so think before you do. Ask on Discord if unsure.
 - **Antivirus removed the file:** check the checksum, then restore it and report the false positive.
-
-Full step-by-step guide: **[Getting past Windows warnings](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)**.
 
 ## 🛠 Settings reference
 
@@ -539,16 +538,18 @@ documentation and issue tracker.
 
 MythosLoader is not code-signed yet, so Windows does not recognise it. For **"Windows protected your PC"**
 click **More info** → **Run anyway**, or right-click the zip → **Properties** → **Unblock** before extracting so the
-warning never appears. **Smart App Control** has no "Run anyway": see what you can do in the [Windows warnings guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md). Updates through the **Update** button never
-show these warnings.
+warning never appears. **Smart App Control** has no "Run anyway": the only way past it is turning it off (Windows Security → App &
+browser control), which Windows usually does not let you undo without resetting the PC. Updates through the
+**Update** button never show these warnings.
 </details>
 
 <details>
 <summary><b>My antivirus complains.</b></summary>
 
 Multi-launchers have to close the game's "already running" check inside the game process, which some
-antivirus products find suspicious. Releases come with SHA-256 checksums. Check the file, restore it from your antivirus, and report the false positive:
-steps in the [Windows warnings guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md). Tell us on Discord too, so we can report it as well.
+antivirus products find suspicious. Releases come with SHA-256 checksums. Check the file against `SHA256SUMS.txt`, restore it
+from your antivirus (Defender: Protection history → Restore), and report the false positive to your antivirus
+vendor. Tell us on Discord too, so we can report it as well.
 </details>
 
 ## 🩹 Troubleshooting
@@ -561,9 +562,9 @@ steps in the [Windows warnings guide](https://github.com/d2r-mythos/MythosLoader
 | Second client won't start | Make sure every running client was started normally; restart MythosLoader and try again |
 | Window title not applied | Check *Rename game windows* in Settings and the loader's Launch options |
 | Built-in login page is blank | Install Microsoft Edge WebView2, or use *paste from browser* |
-| "Windows protected your PC" | **More info** → **Run anyway**, or unblock the zip before extracting ([guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)) |
-| "Smart App Control blocked an app" | No exception is possible while it is on: see the [guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md) |
-| Antivirus removed `MythosLoader.exe` | Check `SHA256SUMS.txt`, restore it, report the false positive ([guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)) |
+| "Windows protected your PC" | **More info** → **Run anyway**, or unblock the zip before extracting |
+| "Smart App Control blocked an app" | No exception is possible while it is on; see the FAQ above |
+| Antivirus removed `MythosLoader.exe` | Check `SHA256SUMS.txt`, restore it, report the false positive |
 
 Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include the lines from the
 **Activity** panel. Login data is removed from them automatically.
