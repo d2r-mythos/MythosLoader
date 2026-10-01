@@ -401,7 +401,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.1.0-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.1.1-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unzip** it anywhere you like. There's no installer.
 3. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
 4. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
@@ -410,7 +410,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.1.0-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.1.1-win-x64.zip -Algorithm SHA256
 ```
 
 **"Windows protected your PC"?** MythosLoader is not code-signed yet, so SmartScreen shows this

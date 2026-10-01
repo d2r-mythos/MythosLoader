@@ -1,5 +1,16 @@
 # MythosLoader release notes
 
+## 1.1.1
+
+- **Fixed: the second login failing.** A loader could log in the first time and then fail to connect to
+  Battle.net on the next launch. MythosLoader now only saves a login the game has really written, and
+  keeps watching for it while the game runs and when it closes.
+- **If a loader is already affected,** right-click it and choose "Log in again / new token" once.
+- A loader's row now shows "Exited" when its game closes.
+- The Activity panel shows what the game does to its login slot during a launch (no login data), which
+  helps when reporting a problem.
+- Keep MythosLoader open while you play: some logins are only saved when the game closes.
+
 ## 1.1.0
 
 - **Built-in updates.** MythosLoader checks for a new release when it starts and shows an Update button
