@@ -1,5 +1,24 @@
 # MythosLoader release notes
 
+## 1.2.5
+
+- **Window layouts.** A new **▦ Windows ▾** button tiles your games on the monitor MythosLoader is on, or
+  across all your monitors, at the game's 16:9 shape. Each game opens where it was next time (saved when you
+  tile, with **Save window positions**, or when you close it from MythosLoader). A spot on a monitor that is
+  gone is ignored. Can be turned off in Settings.
+- **Close games from MythosLoader.** **■ Close ▾** closes all games or the ones you ticked, after a Yes/No
+  check; right-click a loader for **Close game**. Games close normally, like pressing their X.
+- **Crash recovery.** A game that closes with an error shows **Crashed (exit code …)** and a notification.
+  **↻ Relaunch closed** starts every game that closed again with one click.
+- **Lighter game settings for alts.** In a loader's Launch options: a frame rate limit (30 / 60 / 90 / 120) and
+  **Lowest graphics** for that loader's game only. Your other games keep your own settings.
+- **New Runewords tab:** every runeword with its runes in order, bases, sockets, level, stats and where it came
+  from, searchable by name, rune, base or stat.
+- **Favourites:** star recipes and runewords to keep them at the top.
+- **A running loader is never started twice.** Launch all skips loaders that are already running, also after
+  MythosLoader is reopened.
+- Tab icons on every tab and alternating row colours in the loader list.
+
 ## 1.2.4
 
 - **Much faster multi-launch.** All your games now load at the same time and sign in one by one, each as

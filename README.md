@@ -16,6 +16,7 @@
     <a href="#-security-and-privacy">Security</a> ·
     <a href="#-getting-started">Getting started</a> ·
     <a href="#-faq">FAQ</a> ·
+    <a href="https://www.d2rmythos.com/loader">Website</a> ·
     <a href="https://discord.com/invite/d2rmythos">Discord</a>
   </b>
 </p>
@@ -23,10 +24,10 @@
 ---
 
 > [!IMPORTANT]
-> **MythosLoader 1.2 is out.** [Download it from the Releases page](../../releases/latest).
-> New in 1.2: the **system tray**, **Identify** labels on every game window, **focus hotkeys**,
-> **groups**, a **title keeper**, and **import from D2RML**. If you already have 1.1 or newer, press
-> **Update** in the title bar.
+> **MythosLoader 1.2.5 is out.** [Download it from the Releases page](../../releases/latest).
+> New in 1.2.5: **window layouts** (tile your games, they reopen where you left them), **Close all** and
+> **Relaunch closed** after a crash, **lighter game settings for alts**, a **Runewords** tab and
+> **favourite** recipes and runewords. If you already have 1.1 or newer, press **Update** in the title bar.
 >
 > Sections marked **(planned)** describe features coming in later releases. MythosLoader is not
 > code-signed yet. If something doesn't work for you, tell us on
@@ -43,7 +44,7 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
 <p align="center">
   <img src="assets/preview.png" alt="MythosLoader: the Loaders tab with three loaders running, each with its region, a confirmed login, a slot number and its window title" width="92%">
   <br>
-  <sub><i>Concept preview of the main window. Some parts shown here (groups, other clients, Identify) are planned.</i></sub>
+  <sub><i>The Loaders tab with three demo loaders running.</i></sub>
 </p>
 
 ## 📜 Contents
@@ -52,18 +53,21 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
 - [Features](#-features)
   - [Accounts and saved logins](#accounts-and-saved-logins)
   - [Run several clients side by side](#run-several-clients-side-by-side)
+  - [Close, crash recovery and relaunch](#close-crash-recovery-and-relaunch)
   - [Window titles](#window-titles)
   - [Find and Identify](#find-and-identify)
   - [Focus hotkeys](#focus-hotkeys)
   - [Intro skip](#intro-skip)
   - [Cube recipes](#cube-recipes)
+  - [Runewords](#runewords)
   - [System tray](#system-tray)
   - [Game options](#game-options)
   - [Performance mod (lowHD)](#performance-mod-lowhd)
+  - [Lighter game settings for alts](#lighter-game-settings-for-alts)
   - [Updates](#updates)
   - [Groups and launch order](#groups-and-launch-order)
   - [Shortcuts and command line](#shortcuts-and-command-line)
-  - [Window layouts](#window-layouts-planned)
+  - [Window layouts](#window-layouts)
   - [Portable mode](#portable-mode)
 - [Coming from D2RML?](#-coming-from-d2rml)
 - [How it works](#-how-it-works)
@@ -98,15 +102,19 @@ barbarian, a mule, a friend's rush) that gets old fast:
 |---|---|
 | 🔑 **Saved logins** | Log in on Battle.net's own page once. MythosLoader never sees your password. |
 | 🪟 **Multi-launch** | One account, a group, or everything: all games load at once, then sign in a second or two apart. |
+| ▦ **Window layouts** | Tile your games on one monitor or across all of them; each opens where you left it next time. |
+| ↻ **Close and relaunch** | Close all or some games in one go; after a crash, **Relaunch closed** starts them again. |
 | 🏷 **Window titles** | Name every game window with a template like `D2R: {name}` or `[{index}] {label}`. |
 | 🎯 **Find** | Bring any client to the front, even when it's minimised or on another monitor. |
 | 🔦 **Identify** | Flash a big gold label over every running client so you can see which is which. |
 | ⌨ **Focus hotkeys** | `Ctrl+Alt+1` to `9` jump straight to a client. |
 | ⏩ **Intro skip** | No more logo videos and no "Press any key": straight to signing in. |
 | 🧊 **Cube recipes** | Every Horadric Cube recipe in the game, searchable, with rune and gem pictures. |
+| 📜 **Runewords** | Every runeword with its runes in order, bases, sockets, level and stats. Star your favourites. |
 | 🧭 **System tray** | Launch, focus and identify clients from the tray menu. |
 | ⚙ **Game options** | Windowed, no sound, mods and more, for all accounts or per account. |
 | 🪶 **Performance mod** | Run chosen loaders with lowHD to cut memory use and load times. One-click download. |
+| 🐢 **Lighter settings for alts** | A frame rate limit and the lowest graphics for one loader only; your main keeps its settings. |
 | ⬆ **Built-in updates** | A new version is one click away; no trip to GitHub. |
 | 🗂 **Groups** | "MF team", "Rush", "Mules": launch a whole group in one go. |
 | 🔗 **Shortcuts** | Desktop shortcuts and command-line launching for any account or group. |
@@ -138,9 +146,20 @@ itself on every launch. There's nothing extra to download and no command windows
 - A progress strip shows what's happening (`Launching barb-alt (2 of 3) · waiting for login`) with
   **Cancel** and **Cancel all** buttons.
 - Clicking launch on an account that's already running brings it to the front instead of starting a
-  second client on the same account.
+  second client on the same account. **Launch all** skips loaders that are already running, also after
+  MythosLoader was closed and opened again.
 - *(planned)* Games started some other way are listed under **Other clients**, and you can tell
   MythosLoader which account they belong to.
+
+### Close, crash recovery and relaunch
+
+- **■ Close ▾** closes **all games** or **the ones you ticked** in one go, after a Yes/No check.
+  Right-click a loader → **Close game** closes just that one. Each game is asked to close, exactly like
+  pressing its X, so it shuts down normally.
+- If a game closes by itself with an error, its row says **Crashed (exit code …)**, the Activity panel
+  says so and (with notifications on) a tray notification tells you.
+- **↻ Relaunch closed** appears whenever games have closed since you launched them, crashed or not, and
+  starts them all again with one click.
 
 ### Window titles
 
@@ -223,11 +242,30 @@ Event and Reign of the Warlock.
 - Pick a category to narrow the list; the counts show how many recipes each has.
 - Every card shows what goes in the cube (with pictures and counts), what comes out, the mods a crafted
   item always gets, its item level rule, and notes such as **Ladder only** or **Nightmare and Hell only**.
+- Press the ☆ on a recipe to make it a **favourite**: favourites are listed first and have their own
+  **★ Favourites** group.
 - The recipes are read from the game's own cube table and built into MythosLoader, so the tab works
   offline.
 
 <p align="center">
   <img src="assets/recipes.png" alt="The Recipes tab: a search for hit power shows the crafted helm and boots recipes, their ingredients with rune and gem pictures, the mods they always add and the item level rule" width="92%">
+</p>
+
+### Runewords
+
+The **Runewords** tab lists every runeword in the game (99, plus the ones the game never finished if you
+want to see them).
+
+- Each card shows the runes **in socket order** with their pictures, the number of sockets, the level
+  needed, the item types it can go in, and its stats (separately for weapons and shields where they
+  differ). It also says where it came from: Patch 1.10, D2R Ladder seasons and so on.
+- Search by name, rune (`jah`), base (`shield`) or stat (`teleport`); narrow it down by item type and
+  number of sockets.
+- Star runewords to keep them in your **★ Favourites**.
+- Read from the game's own runeword table and built into MythosLoader, so it works offline.
+
+<p align="center">
+  <img src="assets/runewords.png" alt="The Runewords tab: a search for Enigma shows its runes Jah, Ith, Ber in order with pictures, 3 sockets, level 65, body armour bases and its stats" width="92%">
 </p>
 
 ### System tray
@@ -293,6 +331,24 @@ lowHD is not made by us. All credit goes to its author; the original page is on
 [Nexus Mods](https://www.nexusmods.com/diablo2resurrected/mods/1054). If your game is installed under
 `Program Files`, Windows may ask you to run MythosLoader as administrator once for the install.
 
+### Lighter game settings for alts
+
+An alt that only stands in town (a Battle Orders barbarian, a mule, an aura paladin) doesn't need full
+graphics. In a loader's **Launch options**, under **Lighter game settings (this loader only)**:
+
+- **Frame rate limit**: your own setting, 30, 60, 90 or 120 fps.
+- **Lowest graphics**: the Low preset with every quality setting at its lowest.
+
+That loader's game starts with these; all your other games keep your own settings. All copies of the game
+share one settings file, so MythosLoader writes the lighter values just before that game starts and puts
+your file back as soon as the game has read it (a couple of seconds), before the next game starts. If you
+quit the alt from its menu (which saves its settings), the lighter values are set back to yours when it
+closes. If anything is interrupted, MythosLoader repairs it the next time it starts.
+
+<p align="center">
+  <img src="assets/lighter-settings.png" alt="Launch options for the Barbarian loader: lighter game settings with a 30 fps limit and lowest graphics, and the start preview" width="80%">
+</p>
+
 ### Updates
 
 - MythosLoader checks for a new release when it starts. When there is one, an **⬇ Update** button
@@ -321,11 +377,15 @@ MythosLoader.exe --minimized                   # start in the tray
 - These work when MythosLoader is not already running.
 - *(planned)* forwarding to an already-open MythosLoader, and **Create desktop shortcut**.
 
-### Window layouts (planned)
+### Window layouts
 
-- Save each client's position and size; it returns to the same spot on the next launch.
-- **Arrange** tiles all running clients on a monitor (2×1, 2×2, 3×2).
-- Layouts remember which monitor they belong to and are skipped if it's unplugged.
+- **▦ Windows ▾ → Tile on this monitor** arranges all running games in a grid on the monitor MythosLoader
+  is on, as big as they fit at the game's 16:9 shape (two side by side, four in a 2×2, …).
+- **Tile across all monitors** spreads them evenly over every monitor.
+- Each game **opens where it was** next time: positions are saved when you tile, with **Save window
+  positions**, and when you close a game from MythosLoader. **Forget saved positions** clears them.
+- A saved place on a monitor that is no longer there is ignored, and full-screen games are left alone.
+- Turn it off in Settings ("Remember each game's window position").
 
 ### Portable mode
 
@@ -431,7 +491,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.2.4-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.2.5-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unblock** it: right-click the zip → **Properties** → tick **Unblock** → **OK**. This stops the
    "Windows protected your PC" warning.
 3. **Unzip** it anywhere you like. There's no installer.
@@ -442,7 +502,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.2.4-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.2.5-win-x64.zip -Algorithm SHA256
 ```
 
 **Windows warnings.** MythosLoader is not code-signed yet, so Windows may warn about it:
@@ -467,6 +527,7 @@ Get-FileHash .\MythosLoader-1.2.4-win-x64.zip -Algorithm SHA256
 | Windows | Rename game windows | On |
 | Windows | Title template | `D2R: {name}` |
 | Windows | Title keeper | On |
+| Windows | Remember each game's window position | On |
 | Windows | Focus hotkeys | Off (`Ctrl+Alt`) |
 | Intro skip | Skip intro videos | On |
 | Intro skip | Method | Empty-video mod |
@@ -479,7 +540,8 @@ Get-FileHash .\MythosLoader-1.2.4-win-x64.zip -Algorithm SHA256
 | Advanced | Connection indicator per client | On |
 
 Per account: label, title template or *keep the game's title*, hotkey slot, intro skip, launch
-options (add or replace), saved window position, groups.
+options (add or replace), performance mod, lighter game settings (frame rate limit, lowest graphics), saved
+window position, groups.
 
 ## ❓ FAQ
 
@@ -583,8 +645,10 @@ Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include 
 - [x] **1.0**: saved logins, add from token or Battle.net login, multi-launch, window titles, per-loader launch options, region switch, intro skip
 - [x] **1.1**: built-in updates, per-loader performance mod (lowHD) with one-click download
 - [x] **1.2**: system tray, Identify labels, focus hotkeys, groups, title keeper, D2RML import
+- [x] **1.2.4–1.2.5**: games load at once, cube Recipes and Runewords tabs, favourites, window layouts, close and
+  relaunch after a crash, lighter game settings for alts
 - [ ] Next: code-signed builds, first-run wizard, desktop shortcuts, "other clients" list
-- [ ] Later: per-account game settings profiles, window layouts, light theme, more languages
+- [ ] Later: light theme, more languages
 
 Want something on this list? Suggest it on [Discord](https://discord.com/invite/d2rmythos).
 
@@ -594,6 +658,7 @@ Want something on this list? Suggest it on [Discord](https://discord.com/invite/
   <a href="https://discord.com/invite/d2rmythos"><img src="https://img.shields.io/badge/Join%20the%20D2R%20Mythos%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2R Mythos Discord" height="44"></a>
 </p>
 
+- **Website:** [d2rmythos.com/loader](https://www.d2rmythos.com/loader) has the download, the guide and the forum.
 - **Help, questions and ideas:** the [D2R Mythos Discord](https://discord.com/invite/d2rmythos) is the fastest way.
 - **Bugs:** open an issue with the bug-report form.
 - **Security problems:** please report privately, see [SECURITY.md](SECURITY.md).
