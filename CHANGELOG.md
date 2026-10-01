@@ -1,5 +1,10 @@
 # MythosLoader release notes
 
+## 1.1.4
+
+- **New icon.** The icon in the title bar, the window and the taskbar is now the Ber rune as it appears
+  in the game, on a transparent background.
+
 ## 1.1.3
 
 - **LOGIN column now says what is true.** A login shows **Saved** from the moment you add it and
