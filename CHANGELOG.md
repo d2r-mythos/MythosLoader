@@ -1,5 +1,24 @@
 # MythosLoader release notes
 
+## 1.2.0
+
+- **System tray.** A tray icon with a menu to launch loaders and groups, bring a running game to the
+  front, label all games, open Settings and exit. Left-click shows or hides MythosLoader. Minimise to
+  tray, close to tray, start minimised, start with Windows and notifications are in Settings.
+- **Identify.** A label with the slot number and loader name appears over each game window for a few
+  seconds, so you can see which window is which.
+- **Focus hotkeys** (off by default): Ctrl+Alt+1…9 bring a game to the front, Ctrl+Alt+0 labels all
+  games, Ctrl+Alt+L shows MythosLoader.
+- **Groups.** Put loaders in named groups and launch a whole group from the Groups button, the tray or
+  the command line (`--group "name"`).
+- **Title keeper and live rename.** If the game changes its window title back, MythosLoader restores it;
+  changing the title template renames running windows at once.
+- **Import from D2RML** (Settings): brings over loaders and settings from a D2RML folder.
+- **Updater fixed.** "The update could not be installed: the file is being used by another process" no
+  longer blocks an update. If you see that error on an older version: close your games and MythosLoader,
+  start MythosLoader again and press Update, or download this version by hand once.
+- **Launch options window** is wider, in two columns, and no longer needs scrolling.
+
 ## 1.1.4
 
 - **New icon.** The icon in the title bar, the window and the taskbar is now the Ber rune as it appears

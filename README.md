@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://discord.com/invite/d2rmythos"><img src="https://img.shields.io/badge/Discord-Join%20D2R%20Mythos-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2R Mythos Discord"></a>
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0C0A09?style=for-the-badge&logo=windows&logoColor=C8A45C&labelColor=1C1715" alt="Windows 10 and 11">
-  <img src="https://img.shields.io/badge/Release-1.1-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Release 1.1">
+  <img src="https://img.shields.io/badge/Release-1.2-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Release 1.2">
   <img src="https://img.shields.io/badge/For-Diablo%20II%3A%20Resurrected-8B1E1E?style=for-the-badge&labelColor=1C1715" alt="For Diablo II: Resurrected">
 </p>
 
@@ -23,14 +23,14 @@
 ---
 
 > [!IMPORTANT]
-> **MythosLoader 1.1 is out.** [Download it from the Releases page](../../releases/latest).
-> New in 1.1: a built-in **Update** button, and a per-loader **performance mod** (lowHD) so some
-> windows can run light while others stay at full quality. From 1.1 on, MythosLoader updates itself;
-> if you have 1.0, download 1.1 by hand this one last time.
+> **MythosLoader 1.2 is out.** [Download it from the Releases page](../../releases/latest).
+> New in 1.2: the **system tray**, **Identify** labels on every game window, **focus hotkeys**,
+> **groups**, a **title keeper**, and **import from D2RML**. If you already have 1.1 or newer, press
+> **Update** in the title bar.
 >
 > Sections marked **(planned)** describe features coming in later releases. MythosLoader is not
-> code-signed yet and has had limited testing against live game sessions. If something doesn't work
-> for you, tell us on [Discord](https://discord.com/invite/d2rmythos).
+> code-signed yet. If something doesn't work for you, tell us on
+> [Discord](https://discord.com/invite/d2rmythos).
 
 **MythosLoader** lets you play several Diablo II: Resurrected accounts on one PC at the same time.
 Add each Battle.net account once, then launch one, a few, or all of them with a single click. Every
@@ -54,13 +54,13 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
   - [Run several clients side by side](#run-several-clients-side-by-side)
   - [Window titles](#window-titles)
   - [Find and Identify](#find-and-identify)
-  - [Focus hotkeys](#focus-hotkeys-planned)
+  - [Focus hotkeys](#focus-hotkeys)
   - [Intro skip](#intro-skip)
-  - [System tray](#system-tray-planned)
+  - [System tray](#system-tray)
   - [Game options](#game-options)
   - [Performance mod (lowHD)](#performance-mod-lowhd)
   - [Updates](#updates)
-  - [Groups and launch order](#groups-and-launch-order-planned)
+  - [Groups and launch order](#groups-and-launch-order)
   - [Shortcuts and command line](#shortcuts-and-command-line)
   - [Window layouts](#window-layouts-planned)
   - [Portable mode](#portable-mode)
@@ -142,8 +142,8 @@ itself on every launch. There's nothing extra to download and no command windows
 Every game window can be renamed so it's easy to find in the taskbar, in Alt+Tab and on screen.
 
 - One **global template** for all accounts, plus a **per-account override**.
-- *(planned)* **Live rename:** change the template and every running window updates instantly.
-- *(planned)* **Title keeper:** if the game resets its title, MythosLoader puts yours back.
+- **Live rename:** change the template and every running window updates instantly.
+- **Title keeper:** if the game resets its title, MythosLoader puts yours back within a second.
 - **Keep the game's title** per account, for overlays or tools that look for the original title.
 
 | Placeholder | Becomes | Example |
@@ -167,8 +167,6 @@ D2R {index} - {name} ({hotkey})  →  D2R 1 - sorc-main (Ctrl+Alt+1)
 
 ### Find and Identify
 
-**Find** is in 1.0. **Identify** is planned.
-
 <p align="center">
   <img src="assets/identify.png" alt="Identify: each running game window gets a gold border, a slot number and the account name" width="92%">
   <br>
@@ -182,7 +180,7 @@ D2R {index} - {name} ({hotkey})  →  D2R 1 - sorc-main (Ctrl+Alt+1)
   in a small notification instead.
 - The label is drawn *over* the game window by MythosLoader itself; nothing is added to the game.
 
-### Focus hotkeys (planned)
+### Focus hotkeys
 
 Off by default; turn them on in Settings.
 
@@ -192,10 +190,12 @@ Off by default; turn them on in Settings.
 | `Ctrl+Alt+0` | Identify all |
 | `Ctrl+Alt+L` | Show MythosLoader |
 
-- The modifier can be changed to `Ctrl+Shift` or `Win+Alt`.
-- Each account can be pinned to a fixed slot, so `Ctrl+Alt+1` is always your main.
+- A game gets the lowest free number when it starts; the number is shown next to its status and can be
+  put in its window title with `{index}` or `{hotkey}`.
 - Bare F-keys are never used: F1 to F8 are your skill keys in game.
-- If another program already owns a hotkey, the slot is marked as taken.
+- If another program already owns one of the hotkeys, MythosLoader says so in the Activity panel and
+  skips that one.
+- A hotkey only ever brings one window to the front. Nothing is sent to the games.
 
 ### Intro skip
 
@@ -204,7 +204,7 @@ Off by default; turn them on in Settings.
   Nothing is sent once the game has logged in.
 - Alternative method: the game's own *skip logo video* option, or both together.
 
-### System tray (planned)
+### System tray
 
 | Setting | Default |
 |---|---|
@@ -216,7 +216,8 @@ Off by default; turn them on in Settings.
 
 ```text
 MythosLoader
-├─ Launch ▸           sorc-main · barb-alt · pala-aura · Launch all · Groups ▸
+├─ Launch ▸           sorc-main · barb-alt · pala-aura · Launch all
+├─ Launch group ▸     MF team · Mules
 ├─ Running ▸          [1] sorc-main · [2] barb-alt        (click to bring to front)
 ├─ Identify all
 ├─ Cancel launches    (while launching)
@@ -226,7 +227,7 @@ MythosLoader
 └─ Exit               (your games keep running)
 ```
 
-Closing MythosLoader never closes your games.
+Left-click the tray icon to show or hide MythosLoader. Exiting MythosLoader never closes your games.
 
 ### Game options
 
@@ -275,11 +276,13 @@ lowHD is not made by us. All credit goes to its author; the original page is on
 - The **Check for updates** button next to Settings checks on demand. The automatic check can be
   turned off in Settings.
 
-### Groups and launch order (planned)
+### Groups and launch order
 
-- Create named groups such as **MF team**, **Rush** or **Mules**; an account can be in several.
-- Drag accounts to set the launch order.
-- **Launch group** from the toolbar, the tray, a shortcut or the command line.
+- Create named groups such as **MF team**, **Rush** or **Mules**; a loader can be in several.
+- Right-click a loader → **Groups** to add it to a group or make a new one.
+- Launch a group from the **Groups** button, the tray menu or the command line. Its loaders start in
+  the order they were added.
+- `{group}` in a title template shows the loader's group.
 
 ### Shortcuts and command line
 
@@ -289,8 +292,8 @@ MythosLoader.exe --group "MF team"             # launch a group
 MythosLoader.exe --minimized                   # start in the tray
 ```
 
-- In 1.0, `--launch` and `--minimized` work when MythosLoader is not already running.
-- *(planned)* `--group`, forwarding to an already-open MythosLoader, and **Create desktop shortcut**.
+- These work when MythosLoader is not already running.
+- *(planned)* forwarding to an already-open MythosLoader, and **Create desktop shortcut**.
 
 ### Window layouts (planned)
 
@@ -315,16 +318,17 @@ for D2R and stopped working after patch 2.5. Thanks to Sunblood for the original
 | Extra tools | Needs `handle64.exe` | Nothing extra |
 | Administrator rights | Always | Designed to run as a normal user |
 | Saved logins | Plain files next to the program | Encrypted for your Windows user |
-| Window titles | Fixed `D2R:name` | Templates, per-loader override |
-| Find / Identify / hotkeys | ❌ | Find in 1.0; Identify and hotkeys planned |
+| Window titles | Fixed `D2R:name` | Templates, per-loader override, live rename, title keeper |
+| Find / Identify / hotkeys | ❌ | ✅ |
 | Intro skip | Sent to whichever game window it finds first | Sent only to the client that is starting, per account |
-| Tray menu | Empty | Planned |
+| Tray menu | Empty | Launch, launch group, focus, identify, settings |
 | Game options | One global text box | Global + per account, with checkboxes and a live preview |
-| Groups | ❌ | Planned |
+| Groups | ❌ | ✅ |
 | Timeouts and Cancel | ❌ Can wait forever | ✅ Every step has a timeout and a Cancel button |
 
-*(planned)* **Import from D2RML** will bring over your accounts and settings in one step, leaving your
-old files untouched.
+**Import from D2RML** (Settings → Coming from D2RML) brings over your loaders and settings in one step.
+It works for `.bin` files saved by the same Windows user on the same PC that still hold a login; the
+rest are listed as skipped. Your old files are left untouched.
 
 ## 🧠 How it works
 
@@ -401,7 +405,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.1.4-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.2.0-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unzip** it anywhere you like. There's no installer.
 3. **Run** `MythosLoader.exe`. It finds your game folder automatically (or set it in Settings).
 4. **Add your accounts.** Click **＋ Add account**, then paste a login token (`US-…`, `EU-…`, `KR-…`) or log in on the Battle.net page.
@@ -410,7 +414,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.1.4-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.2.0-win-x64.zip -Algorithm SHA256
 ```
 
 **"Windows protected your PC"?** MythosLoader is not code-signed yet, so SmartScreen shows this
@@ -527,8 +531,8 @@ Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include 
 - [x] Design and planning
 - [x] **1.0**: saved logins, add from token or Battle.net login, multi-launch, window titles, per-loader launch options, region switch, intro skip
 - [x] **1.1**: built-in updates, per-loader performance mod (lowHD) with one-click download
-- [ ] Next: system tray, Identify overlay, focus hotkeys, groups, title keeper, D2RML import
-- [ ] Code-signed builds, first-run wizard
+- [x] **1.2**: system tray, Identify labels, focus hotkeys, groups, title keeper, D2RML import
+- [ ] Next: code-signed builds, first-run wizard, desktop shortcuts, "other clients" list
 - [ ] Later: per-account game settings profiles, window layouts, light theme, more languages
 
 Want something on this list? Suggest it on [Discord](https://discord.com/invite/d2rmythos).
