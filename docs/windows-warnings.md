@@ -8,8 +8,6 @@ warning you may see, what it means, and how to get MythosLoader running safely.
 [official Releases page](https://github.com/d2r-mythos/MythosLoader/releases/latest), check the checksum (step 1),
 and only then tell Windows to trust the file. Never follow these steps for a MythosLoader download from anywhere else.
 
-A Microsoft Store version, signed by Microsoft, is on its way. It installs without any of these warnings.
-
 ---
 
 ## Quick version
@@ -105,12 +103,11 @@ settings**. It shows **On**, **Evaluation** or **Off**.
 
 - **Evaluation:** Windows is still deciding whether to switch it on. MythosLoader may run today and be blocked
   later if Windows switches it on.
-- **On:** MythosLoader cannot run on this PC until it is signed. Your options:
-  1. **Wait for the Microsoft Store version (recommended).** It is signed by Microsoft and Smart App Control
-     accepts it. We will announce it on the [Discord](https://discord.com/invite/d2rmythos) and on this page.
-  2. **Turn Smart App Control off** (same settings page → **Off**). Think about this first: on most Windows versions
-     you cannot turn it back on later without resetting or reinstalling Windows. Your normal antivirus (Microsoft
-     Defender) keeps working when it is off. Only do this on a PC you are comfortable running without it.
+- **On:** MythosLoader cannot run on this PC while Smart App Control is on, because it is not code-signed yet.
+  The only way to run it today is to **turn Smart App Control off** (same settings page → **Off**). Think about
+  this first: on most Windows versions you cannot turn it back on later without resetting or reinstalling Windows.
+  Your normal antivirus (Microsoft Defender) keeps working when it is off. Only do this on a PC you are comfortable
+  running without it.
 
 There is no way to make an exception for a single program while Smart App Control is on. That is by design, and
 we will not suggest tricks to get around it.

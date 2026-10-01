@@ -426,12 +426,11 @@ Get-FileHash .\MythosLoader-1.2.3-win-x64.zip -Algorithm SHA256
 
 - **Your browser holds back the download:** Edge: **…** → **Keep** → **Keep anyway**. Chrome: **Ctrl+J** → **Keep**.
 - **"Windows protected your PC":** click **More info** → **Run anyway** (or unblock the zip first, step 2).
-- **"Smart App Control blocked an app":** there is no "Run anyway" for this one. Wait for the Microsoft Store version,
-  or read the options in the guide.
+- **"Smart App Control blocked an app":** there is no "Run anyway" for this one. Read the guide before you
+  change anything.
 - **Antivirus removed the file:** check the checksum, then restore it and report the false positive.
 
-Full step-by-step guide: **[Getting past Windows warnings](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)**. A Microsoft
-Store version, signed by Microsoft, is on its way and installs without any of these.
+Full step-by-step guide: **[Getting past Windows warnings](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)**.
 
 ## 🛠 Settings reference
 
@@ -521,8 +520,7 @@ documentation and issue tracker.
 
 MythosLoader is not code-signed yet, so Windows does not recognise it. For **"Windows protected your PC"**
 click **More info** → **Run anyway**, or right-click the zip → **Properties** → **Unblock** before extracting so the
-warning never appears. **Smart App Control** has no "Run anyway": wait for the Microsoft Store version (signed by
-Microsoft), or see the options in the [Windows warnings guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md). Updates through the **Update** button never
+warning never appears. **Smart App Control** has no "Run anyway": see what you can do in the [Windows warnings guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md). Updates through the **Update** button never
 show these warnings.
 </details>
 
@@ -545,7 +543,7 @@ steps in the [Windows warnings guide](https://github.com/d2r-mythos/MythosLoader
 | Window title not applied | Check *Rename game windows* in Settings and the loader's Launch options |
 | Built-in login page is blank | Install Microsoft Edge WebView2, or use *paste from browser* |
 | "Windows protected your PC" | **More info** → **Run anyway**, or unblock the zip before extracting ([guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)) |
-| "Smart App Control blocked an app" | No exception is possible while it is on: Microsoft Store version (coming), or the options in the [guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md) |
+| "Smart App Control blocked an app" | No exception is possible while it is on: see the [guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md) |
 | Antivirus removed `MythosLoader.exe` | Check `SHA256SUMS.txt`, restore it, report the false positive ([guide](https://github.com/d2r-mythos/MythosLoader/blob/main/docs/windows-warnings.md)) |
 
 Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include the lines from the

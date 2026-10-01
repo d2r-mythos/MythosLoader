@@ -1,7 +1,6 @@
 # MythosLoader privacy policy
 
-*Applies to every way of getting MythosLoader: the Microsoft Store, the standalone download from GitHub, and any
-installer published by D2R Mythos. Last updated 2026-10-01.*
+*Applies to MythosLoader as downloaded from its GitHub releases. Last updated 2026-10-01.*
 
 ## The short version
 
@@ -24,9 +23,9 @@ MythosLoader only receives the resulting login token. Uninstalling the program d
 
 - **Battle.net's login page**, when you choose to log in inside the app. That page is Blizzard's, and Blizzard's own
   privacy policy applies to it.
-- **GitHub**: the optional lowHD mod, downloaded only when you ask for it. The standalone version also checks for a
-  newer release when it starts (you can turn that off) and downloads it when you press Update; the Microsoft Store
-  version leaves updates to the Store. GitHub sees your IP address, as with any download.
+- **GitHub**: a check for a newer release when MythosLoader starts (you can turn it off), the download of a new
+  version when you press Update, and the optional lowHD mod when you ask for it. GitHub sees your IP address, as with
+  any download.
 
 Nothing is sent to D2R Mythos. There is no server of ours that MythosLoader talks to.
 
