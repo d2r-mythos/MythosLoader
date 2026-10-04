@@ -16,7 +16,7 @@
     <a href="#-security-and-privacy">Security</a> ·
     <a href="#-getting-started">Getting started</a> ·
     <a href="#-faq">FAQ</a> ·
-    <a href="https://www.d2rmythos.com/loader">Website</a> ·
+    <a href="https://d2r.org/loader">Website</a> ·
     <a href="https://discord.com/invite/d2rmythos">Discord</a>
   </b>
 </p>
@@ -658,7 +658,7 @@ Want something on this list? Suggest it on [Discord](https://discord.com/invite/
   <a href="https://discord.com/invite/d2rmythos"><img src="https://img.shields.io/badge/Join%20the%20D2R%20Mythos%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2R Mythos Discord" height="44"></a>
 </p>
 
-- **Website:** [d2rmythos.com/loader](https://www.d2rmythos.com/loader) has the download, the guide and the forum.
+- **Website:** [d2r.org/loader](https://d2r.org/loader) has the download, the guide and the forum.
 - **Help, questions and ideas:** the [D2R Mythos Discord](https://discord.com/invite/d2rmythos) is the fastest way.
 - **Bugs:** open an issue with the bug-report form.
 - **Security problems:** please report privately, see [SECURITY.md](SECURITY.md).
