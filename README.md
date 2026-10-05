@@ -24,10 +24,11 @@
 ---
 
 > [!IMPORTANT]
-> **MythosLoader 1.2.5 is out.** [Download it from the Releases page](../../releases/latest).
-> New in 1.2.5: **window layouts** (tile your games, they reopen where you left them), **Close all** and
-> **Relaunch closed** after a crash, **lighter game settings for alts**, a **Runewords** tab and
-> **favourite** recipes and runewords. If you already have 1.1 or newer, press **Update** in the title bar.
+> **MythosLoader 1.2.6 is out.** [Download it from the Releases page](../../releases/latest).
+> New in 1.2.6: windowed games **keep the size they opened at** instead of staying maximized, and no more
+> "Logged in" pop-ups. New in 1.2.5: **window layouts**, **Close all** and **Relaunch closed** after a crash,
+> **lighter game settings for alts**, a **Runewords** tab and **favourite** recipes and runewords.
+> If you already have 1.1 or newer, press **Update** in the title bar.
 >
 > Sections marked **(planned)** describe features coming in later releases. MythosLoader is not
 > code-signed yet. If something doesn't work for you, tell us on
@@ -276,7 +277,7 @@ want to see them).
 | Close to tray | Off |
 | Start minimised | Off |
 | Start with Windows | Off |
-| Notifications (login finished, login failed, all launches done) | On |
+| Notifications (login failed, all launches done) | On |
 
 ```text
 MythosLoader
@@ -491,7 +492,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.2.5-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.2.6-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unblock** it: right-click the zip → **Properties** → tick **Unblock** → **OK**. This stops the
    "Windows protected your PC" warning.
 3. **Unzip** it anywhere you like. There's no installer.
@@ -502,7 +503,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.2.5-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.2.6-win-x64.zip -Algorithm SHA256
 ```
 
 **Windows warnings.** MythosLoader is not code-signed yet, so Windows may warn about it:
@@ -645,7 +646,7 @@ Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include 
 - [x] **1.0**: saved logins, add from token or Battle.net login, multi-launch, window titles, per-loader launch options, region switch, intro skip
 - [x] **1.1**: built-in updates, per-loader performance mod (lowHD) with one-click download
 - [x] **1.2**: system tray, Identify labels, focus hotkeys, groups, title keeper, D2RML import
-- [x] **1.2.4–1.2.5**: games load at once, cube Recipes and Runewords tabs, favourites, window layouts, close and
+- [x] **1.2.4–1.2.6**: games load at once, cube Recipes and Runewords tabs, favourites, window layouts, close and
   relaunch after a crash, lighter game settings for alts
 - [ ] Next: code-signed builds, first-run wizard, desktop shortcuts, "other clients" list
 - [ ] Later: light theme, more languages

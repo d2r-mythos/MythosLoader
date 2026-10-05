@@ -1,5 +1,13 @@
 # MythosLoader release notes
 
+## 1.2.6
+
+- **Games keep their window size.** A game started in windowed mode no longer stays maximized after it signs
+  in: it goes back to the size it opened at (or to its saved position, if you saved one). Full screen and
+  borderless games are left as they are.
+- **No more "Logged in" notification.** A game signing in is only noted in the activity log. Notifications for
+  a launch problem, all launches finished and a crash are unchanged.
+
 ## 1.2.5
 
 - **Window layouts.** A new **▦ Windows ▾** button tiles your games on the monitor MythosLoader is on, or
