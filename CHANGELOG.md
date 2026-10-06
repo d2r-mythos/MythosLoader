@@ -1,5 +1,10 @@
 # MythosLoader release notes
 
+## 1.2.7
+
+- **New icon.** MythosLoader now uses the Annihilus charm, the same mark as [d2r.org](https://d2r.org): in the
+  title bar, on the taskbar, in the system tray and on the program file. Nothing else changes.
+
 ## 1.2.6
 
 - **Games keep their window size.** A game started in windowed mode no longer stays maximized after it signs
