@@ -1,5 +1,13 @@
 # MythosLoader release notes
 
+## 1.2.8
+
+- **See a loader's saved login.** Right-click a loader, choose **Launch options**: the new **Saved login** box
+  shows the token that loader signs in with. It stays hidden until you press **Show**. **Copy** keeps it out of
+  Windows clipboard history and clears the clipboard again after 30 seconds. Anyone with this text can sign in
+  to your account, so don't show it on stream or share it. After a launch this is the newer login the game handed
+  back, not the one you first pasted.
+
 ## 1.2.7
 
 - **New icon.** MythosLoader now uses the Annihilus charm, the same mark as [d2r.org](https://d2r.org): in the
