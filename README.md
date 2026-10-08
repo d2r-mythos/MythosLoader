@@ -24,8 +24,8 @@
 ---
 
 > [!IMPORTANT]
-> **MythosLoader 1.2.8 is out.** [Download it from the Releases page](../../releases/latest).
-> New in 1.2.8: see and copy a loader's **saved login** from its Launch options. New in 1.2.7: a new icon, the **Annihilus charm** of [d2r.org](https://d2r.org). New in 1.2.6: windowed games **keep the size they opened at** instead of staying maximized, and no more
+> **MythosLoader 1.2.9 is out.** [Download it from the Releases page](../../releases/latest).
+> New in 1.2.9: a **light theme**, the same two looks as [d2r.org](https://d2r.org) (the ☀ / ☾ button in the title bar, or Settings → Appearance). New in 1.2.8: see and copy a loader's **saved login** from its Launch options. New in 1.2.7: a new icon, the **Annihilus charm** of [d2r.org](https://d2r.org). New in 1.2.6: windowed games **keep the size they opened at** instead of staying maximized, and no more
 > "Logged in" pop-ups. New in 1.2.5: **window layouts**, **Close all** and **Relaunch closed** after a crash,
 > **lighter game settings for alts**, a **Runewords** tab and **favourite** recipes and runewords.
 > If you already have 1.1 or newer, press **Update** in the title bar.
@@ -43,7 +43,10 @@ No more logging in by hand. No more alt-tabbing through four identical windows c
 "Diablo II: Resurrected". No command windows flashing, no extra tools to download.
 
 <p align="center">
-  <img src="assets/preview.png" alt="MythosLoader: the Loaders tab with three loaders running, each with its region, a confirmed login, a slot number and its window title" width="92%">
+  <picture>
+    <source srcset="assets/preview-light.png" media="(prefers-color-scheme: light)">
+    <img src="assets/preview.png" alt="MythosLoader: the Loaders tab with three loaders running, each with its region, a confirmed login, a slot number and its window title" width="92%">
+  </picture>
   <br>
   <sub><i>The Loaders tab with three demo loaders running.</i></sub>
 </p>
@@ -117,6 +120,7 @@ barbarian, a mule, a friend's rush) that gets old fast:
 | 🪶 **Performance mod** | Run chosen loaders with lowHD to cut memory use and load times. One-click download. |
 | 🐢 **Lighter settings for alts** | A frame rate limit and the lowest graphics for one loader only; your main keeps its settings. |
 | ⬆ **Built-in updates** | A new version is one click away; no trip to GitHub. |
+| 🌗 **Night or light** | Two looks, the same as [d2r.org](https://d2r.org): the dark gold night theme or a clean light one. The ☀ / ☾ button in the title bar switches at once. |
 | 🗂 **Groups** | "MF team", "Rush", "Mules": launch a whole group in one go. |
 | 🔗 **Shortcuts** | Desktop shortcuts and command-line launching for any account or group. |
 | 🔒 **Encrypted storage** | Saved logins are encrypted for your Windows user account. |
@@ -251,7 +255,10 @@ Event and Reign of the Warlock.
   offline.
 
 <p align="center">
-  <img src="assets/recipes.png" alt="The Recipes tab: a search for hit power shows the crafted helm and boots recipes, their ingredients with rune and gem pictures, the mods they always add and the item level rule" width="92%">
+  <picture>
+    <source srcset="assets/recipes-light.png" media="(prefers-color-scheme: light)">
+    <img src="assets/recipes.png" alt="The Recipes tab: a search for hit power shows the crafted helm and boots recipes, their ingredients with rune and gem pictures, the mods they always add and the item level rule" width="92%">
+  </picture>
 </p>
 
 ### Runewords
@@ -268,7 +275,10 @@ want to see them).
 - Read from the game's own runeword table and built into MythosLoader, so it works offline.
 
 <p align="center">
-  <img src="assets/runewords.png" alt="The Runewords tab: a search for Enigma shows its runes Jah, Ith, Ber in order with pictures, 3 sockets, level 65, body armour bases and its stats" width="92%">
+  <picture>
+    <source srcset="assets/runewords-light.png" media="(prefers-color-scheme: light)">
+    <img src="assets/runewords.png" alt="The Runewords tab: a search for Enigma shows its runes Jah, Ith, Ber in order with pictures, 3 sockets, level 65, body armour bases and its stats" width="92%">
+  </picture>
 </p>
 
 ### System tray
@@ -349,7 +359,10 @@ quit the alt from its menu (which saves its settings), the lighter values are se
 closes. If anything is interrupted, MythosLoader repairs it the next time it starts.
 
 <p align="center">
-  <img src="assets/lighter-settings.png" alt="Launch options for the Barbarian loader: lighter game settings with a 30 fps limit and lowest graphics, and the start preview" width="80%">
+  <picture>
+    <source srcset="assets/lighter-settings-light.png" media="(prefers-color-scheme: light)">
+    <img src="assets/lighter-settings.png" alt="Launch options for the Barbarian loader: lighter game settings with a 30 fps limit and lowest graphics, and the start preview" width="80%">
+  </picture>
 </p>
 
 ### Updates
@@ -494,7 +507,7 @@ your PC clean.
 
 ## 🚀 Getting started
 
-1. **Download** `MythosLoader-1.2.8-win-x64.zip` from the [Releases](../../releases/latest) page.
+1. **Download** `MythosLoader-1.2.9-win-x64.zip` from the [Releases](../../releases/latest) page.
 2. **Unblock** it: right-click the zip → **Properties** → tick **Unblock** → **OK**. This stops the
    "Windows protected your PC" warning.
 3. **Unzip** it anywhere you like. There's no installer.
@@ -505,7 +518,7 @@ your PC clean.
 **Verify your download** (optional): every release lists SHA-256 checksums in `SHA256SUMS.txt`.
 
 ```powershell
-Get-FileHash .\MythosLoader-1.2.8-win-x64.zip -Algorithm SHA256
+Get-FileHash .\MythosLoader-1.2.9-win-x64.zip -Algorithm SHA256
 ```
 
 **Windows warnings.** MythosLoader is not code-signed yet, so Windows may warn about it:
@@ -520,8 +533,13 @@ Get-FileHash .\MythosLoader-1.2.8-win-x64.zip -Algorithm SHA256
 ## 🛠 Settings reference
 
 <p align="center">
-  <img src="assets/settings.png" alt="The Settings tab: game location and options, window titles, intro skip, launching, tray and startup, hotkeys and D2RML import on one page" width="92%">
+  <picture>
+    <source srcset="assets/settings-light.png" media="(prefers-color-scheme: light)">
+    <img src="assets/settings.png" alt="The Settings tab: game location and options, window titles, intro skip, launching, tray and startup, hotkeys and D2RML import on one page" width="92%">
+  </picture>
 </p>
+
+<sub><i>Shown in the night theme; under a light system theme GitHub shows the light one. <b>Appearance</b> (right column) picks Night or Light for the program itself.</i></sub>
 
 | Section | Setting | Default |
 |---|---|---|
@@ -648,8 +666,8 @@ Still stuck? Ask on [Discord](https://discord.com/invite/d2rmythos) and include 
 - [x] **1.0**: saved logins, add from token or Battle.net login, multi-launch, window titles, per-loader launch options, region switch, intro skip
 - [x] **1.1**: built-in updates, per-loader performance mod (lowHD) with one-click download
 - [x] **1.2**: system tray, Identify labels, focus hotkeys, groups, title keeper, D2RML import
-- [x] **1.2.4–1.2.8**: games load at once, cube Recipes and Runewords tabs, favourites, window layouts, close and
-  relaunch after a crash, lighter game settings for alts, the Annihilus charm icon, view a saved login
+- [x] **1.2.4–1.2.9**: games load at once, cube Recipes and Runewords tabs, favourites, window layouts, close and
+  relaunch after a crash, lighter game settings for alts, the Annihilus charm icon, view a saved login, a light theme
 - [ ] Next: code-signed builds, first-run wizard, desktop shortcuts, "other clients" list
 - [ ] Later: light theme, more languages
 

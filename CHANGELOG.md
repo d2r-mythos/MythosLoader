@@ -1,5 +1,11 @@
 # MythosLoader release notes
 
+## 1.2.9
+
+- **A light theme.** MythosLoader now has the same two looks as [d2r.org](https://d2r.org): the dark gold night
+  theme it always had, and a clean light one. Press the ☀ / ☾ button in the title bar to switch at once, or choose
+  under **Settings → Appearance**. Your choice is kept. Everything else is unchanged.
+
 ## 1.2.8
 
 - **See a loader's saved login.** Right-click a loader, choose **Launch options**: the new **Saved login** box
