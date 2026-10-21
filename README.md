@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Release-1.2-C8A45C?style=for-the-badge&labelColor=1C1715" alt="Release 1.2">
   <img src="https://img.shields.io/badge/For-Diablo%20II%3A%20Resurrected-8B1E1E?style=for-the-badge&labelColor=1C1715" alt="For Diablo II: Resurrected">
 </p>
-
+ 
 <p align="center">
   <b>
     <a href="#-features">Features</a> ·
